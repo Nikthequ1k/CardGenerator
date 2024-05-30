@@ -1,29 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Random Card Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #16cc10;
+      }
+      .card {
+        width: 200px;
+        height: 300px;
+        border: 1px solid #000;
+        border-radius: 10px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .value {
+        font-size: 54px;
+        text-align: left;
+      }
+      .suit {
+        font-size: 72px;
+        text-align: center;
+        margin-top: 0px;
+      }
+      .bottom-value {
+        font-size: 54px;
+        text-align: end;
+        transform: rotate(180deg);
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        text-align: justify;
+      }
+      .w-100 {
+        display: flex;
+        justify-content: end;
+        height: 40px;
+      }
+      .intro {
+        font-family: "Poetsen One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <h1 class="intro">Nik's Card Generator</h1>
+    <div class="card">
+      <div class="value" id="card-suit-top">♠</div>
+      <div class="suit" id="card-value">A</div>
+      <div class="w-100">
+        <p class="value bottom-value" id="card-suit-bottom">♠</p>
       </div>
     </div>
+    <button class="generateCardbutton" onclick="generateCard()">
+      Generate Card
+    </button>
+    <script src="app.js"></script>
   </body>
 </html>
